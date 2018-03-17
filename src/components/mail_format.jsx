@@ -35,17 +35,12 @@ export default class MailFormat extends React.Component {
         primary
         onClick={this.handleClose}
       />,
-      <FlatButton
-        label="Save"
-        primary
-        onClick={this.handleSave}
-      />,
     ];
 
     const title = `【共有】1on1面談_${this.props.heldMonth}月(${this.props.mentorName})`;
 
-    const calender = this.props.menteeInfoList.map((menteeInfo) => {
-      return (
+    const calender = this.props.menteeInfoList.map(menteeInfo => (
+      (
         <div key={menteeInfo.menteeNum}>
           <p>──────────────</p>
           <p>日時      :  {dateFormat(menteeInfo.heldDateTime, 'mm/dd HH:MM〜')}</p>
@@ -53,8 +48,8 @@ export default class MailFormat extends React.Component {
           <p>メンティー:  {menteeInfo.menteeName}</p>
           <p>会議室    :  {menteeInfo.useOfMeetingRoom ? '要' : '不要' } </p>
         </div>
-      );
-    });
+      )
+    ));
 
     const format = (
       <div>
@@ -87,9 +82,19 @@ export default class MailFormat extends React.Component {
           autoScrollBodyContent
         >
           {format}
-        </Dialog >
-      </div >
+        </Dialog>
+      </div>
     );
   }
 }
 
+MailFormat.propTypes = {
+  mentorName: PropTypes.string.isRequired,
+  heldMonth: PropTypes.number.isRequired,
+  menteeInfoList: PropTypes.arrayOf(PropTypes.shape({
+    menteeName: PropTypes.string,
+    menteeNum: PropTypes.number,
+    heldDateTime: PropTypes.string,
+    useOfMeetingRoom: PropTypes.bool,
+  })).isRequired,
+};

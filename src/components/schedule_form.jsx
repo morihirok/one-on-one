@@ -30,7 +30,7 @@ export default class ScheduleForm extends React.Component {
   }
 
   render() {
-    let title = '未入力';
+    let title = 'メンティーの情報を入力してください';
 
     let heldDateTime = {};
     if (this.props.menteeInfo.heldDateTime) {

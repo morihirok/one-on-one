@@ -21,6 +21,7 @@ const OneOnOneGenerator = props => (
   <div>
     <AppBar
       title="1 on 1 Generator"
+      showMenuIconButton={false}
     />
     <MentorInfoField
       mentorName={props.mentorName}

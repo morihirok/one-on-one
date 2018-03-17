@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "parcel build index.html --public-url . --out-dir build",
     "start": "parcel index.html",
     "lint": "eslint src/**"
   },

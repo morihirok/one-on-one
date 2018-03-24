@@ -17,9 +17,12 @@ export default class AddMenteeBtn extends React.Component {
   render() {
     return (
       <FloatingActionButton
-        onClick={this.handleClick}
-        style={{ marginTop: 10 }}
         mini
+        onClick={this.handleClick}
+        style={{
+          marginTop: 10,
+          marginBottom: 10,
+        }}
       >
         <ContentAdd />
       </FloatingActionButton>
